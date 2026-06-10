@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -63,14 +63,25 @@ export default function Footer() {
               <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
               Karnataka, India
             </p>
-            <a className="flex gap-3 hover:text-white" href="tel:+919000000000">
-              <Phone className="size-4 text-accent" /> +91 90000 00000
+            <a className="flex gap-3 hover:text-white" href="tel:+917892755421">
+              <Phone className="size-4 text-accent" /> +91 78927 55421
+            </a>
+            <a className="flex gap-3 hover:text-white" href="tel:+917022065539">
+              <Phone className="size-4 text-accent" /> +91 70220 65539
             </a>
             <a
               className="flex gap-3 hover:text-white"
-              href="mailto:exports@cmbexports.com"
+              href="https://wa.me/917892755421"
+              target="_blank"
+              rel="noreferrer"
             >
-              <Mail className="size-4 text-accent" /> exports@cmbexports.com
+              <MessageCircle className="size-4 text-accent" /> +91 78927 55421
+            </a>
+            <a
+              className="flex gap-3 hover:text-white"
+              href="mailto:cmb@cmbfoodsandgrains.com"
+            >
+              <Mail className="size-4 text-accent" /> cmb@cmbfoodsandgrains.com
             </a>
           </div>
         </div>

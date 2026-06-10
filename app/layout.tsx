@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -60,8 +61,8 @@ const jsonLd = {
   logo: "https://cmbexports.com/logo.png",
   description:
     "Export-focused supplier of premium Indian non-basmati rice.",
-  email: "exports@cmbexports.com",
-  telephone: "+91 90000 00000",
+  email: "cmb@cmbfoodsandgrains.com",
+  telephone: "+91 78927 55421",
   address: {
     "@type": "PostalAddress",
     addressCountry: "IN",
@@ -80,6 +81,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
+        <WhatsAppButton />
         <Footer />
         <script
           type="application/ld+json"

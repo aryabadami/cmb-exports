@@ -1,5 +1,9 @@
 import { Resend } from "resend";
 
+const COMPANY_EMAIL =
+  process.env.COMPANY_EMAIL || "cmb@cmbfoodsandgrains.com";
+const RESEND_FROM_EMAIL = "CMB Exports <onboarding@resend.dev>";
+
 type ContactPayload = {
   companyName?: string;
   contactPerson?: string;
@@ -60,8 +64,8 @@ export async function POST(request: Request) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || "CMB Exports <onboarding@resend.dev>",
-      to: process.env.CONTACT_EMAIL || "exports@cmbexports.com",
+      from: RESEND_FROM_EMAIL,
+      to: COMPANY_EMAIL,
       replyTo: data.email,
       subject: `Rice export inquiry from ${data.companyName}`,
       html: `
@@ -82,6 +86,26 @@ export async function POST(request: Request) {
         { error: "Unable to send your inquiry right now." },
         { status: 502 },
       );
+    }
+
+    const { error: autoReplyError } = await resend.emails.send({
+      from: RESEND_FROM_EMAIL,
+      to: data.email!,
+      replyTo: COMPANY_EMAIL,
+      subject: "We received your rice export inquiry",
+      html: `
+        <p>Dear ${clean.contactPerson},</p>
+        <p>Thank you for contacting CMB Exports. We have received your rice export inquiry and our team will respond shortly.</p>
+        <p>Regards,<br>
+        CMB Exports Team<br>
+        M/s. C.M. Badami and Sons<br>
+        📧 cmb@cmbfoodsandgrains.com<br>
+        📞 +91 78927 55421</p>
+      `,
+    });
+
+    if (autoReplyError) {
+      console.error("Resend auto-reply error:", autoReplyError);
     }
 
     return Response.json({ success: true });

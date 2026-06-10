@@ -82,7 +82,8 @@ export default function WelcomePage() {
               <span className="block text-3xl font-medium sm:text-5xl">
                 Welcome to
               </span>
-              <span className="mt-2 block">C.M.B Food &amp; Grains</span>
+              <span className="mt-2 block whitespace-nowrap">C.M.B</span>
+              <span className="block whitespace-nowrap">Food &amp; Grains</span>
             </h1>
             <p className="mt-6 text-base text-slate-200 sm:text-xl">
               Your Reliable Partner in Premium Rice Exports
