@@ -142,21 +142,23 @@ export const certifications = [
   },
   {
     name: "IEC",
-    status: "In Process",
-    ready: false,
+    status: "Available",
+    ready: true,
     icon: FileCheck2,
-    description: "Import Export Code registration is currently underway.",
+    description:
+      "Import Export Code registered and active for international trade.",
   },
   {
     name: "APEDA",
-    status: "In Process",
-    ready: false,
+    status: "Available",
+    ready: true,
     icon: BadgeCheck,
-    description: "Agricultural export registration is currently underway.",
+    description:
+      "Agricultural and Processed Food Products Export Development Authority registration complete.",
   },
   {
     name: "Export Compliance",
-    status: "Ready",
+    status: "Available",
     ready: true,
     icon: Ship,
     description: "Shipment and buyer documentation workflow is prepared.",

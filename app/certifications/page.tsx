@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CheckCircle2, CircleDashed } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import ContactCTA from "@/components/home/ContactCTA";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
@@ -22,7 +22,7 @@ export default function CertificationsPage() {
       <section className="section-space bg-muted">
         <div className="container-shell grid gap-6 md:grid-cols-2">
           {certifications.map(
-            ({ icon: Icon, name, status, ready, description }, index) => (
+            ({ icon: Icon, name, status, description }, index) => (
               <Reveal key={name} delay={index * 0.05}>
                 <article className="flex h-full gap-5 rounded-3xl bg-white p-7 shadow-sm">
                   <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-white">
@@ -33,9 +33,7 @@ export default function CertificationsPage() {
                       <h2 className="font-heading text-2xl font-bold text-primary">
                         {name}
                       </h2>
-                      <span
-                        className={`rounded-full px-3 py-1 text-xs font-extrabold ${ready ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700"}`}
-                      >
+                      <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-extrabold text-green-800">
                         {status}
                       </span>
                     </div>
@@ -64,18 +62,14 @@ export default function CertificationsPage() {
               ["Commercial documentation workflow", true],
               ["Product and packing confirmation", true],
               ["Quality inspection coordination", true],
-              ["IEC registration", false],
-              ["APEDA registration", false],
+              ["IEC registration", true],
+              ["APEDA registration", true],
             ].map(([label, ready]) => (
               <div
                 key={label as string}
                 className="flex items-center gap-3 rounded-xl border border-green-100 p-4"
               >
-                {ready ? (
-                  <CheckCircle2 className="size-5 text-accent" />
-                ) : (
-                  <CircleDashed className="size-5 text-amber-500" />
-                )}
+                {ready && <CheckCircle2 className="size-5 text-accent" />}
                 <span className="font-semibold text-slate-700">
                   {label as string}
                 </span>

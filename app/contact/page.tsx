@@ -10,6 +10,60 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactCards = [
+    {
+      Icon: MapPin,
+      title: "Location",
+      content: <p className="mt-2 text-slate-600">Karnataka, India</p>,
+    },
+    {
+      Icon: Phone,
+      title: "Phone",
+      content: (
+        <div className="mt-2 space-y-1 text-slate-600">
+          <p>+91 78927 55421</p>
+          <p>+91 70220 65539</p>
+        </div>
+      ),
+    },
+    {
+      Icon: Mail,
+      title: "Email",
+      content: (
+        <a
+          href="mailto:cmb@cmbfoodsandgrains.com"
+          className="mt-2 block text-slate-600 transition hover:text-accent"
+        >
+          cmb@cmbfoodsandgrains.com
+        </a>
+      ),
+    },
+    {
+      Icon: MessageCircle,
+      title: "WhatsApp",
+      content: (
+        <div className="mt-2 space-y-1">
+          <a
+            href="https://wa.me/917892755421"
+            target="_blank"
+            rel="noreferrer"
+            className="block text-slate-600 transition hover:text-accent"
+          >
+            +91 78927 55421
+          </a>
+          <a
+            href="https://wa.me/917022065539"
+            target="_blank"
+            rel="noreferrer"
+            className="block text-slate-600 transition hover:text-accent"
+          >
+            +91 70220 65539
+          </a>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <>
       <PageHero
@@ -19,55 +73,11 @@ export default function ContactPage() {
       />
       <section className="section-space bg-white">
         <div className="container-shell grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              Icon: MapPin,
-              title: "Location",
-              value: "Karnataka, India",
-              href: null,
-            },
-            {
-              Icon: Phone,
-              title: "Phone",
-              value: "+91 78927 55421",
-              href: "tel:+917892755421",
-            },
-            {
-              Icon: Phone,
-              title: "Phone",
-              value: "+91 70220 65539",
-              href: "tel:+917022065539",
-            },
-            {
-              Icon: Mail,
-              title: "Email",
-              value: "cmb@cmbfoodsandgrains.com",
-              href: "mailto:cmb@cmbfoodsandgrains.com",
-            },
-            {
-              Icon: MessageCircle,
-              title: "WhatsApp",
-              value: "+91 78927 55421",
-              href: "https://wa.me/917892755421",
-            },
-          ].map(({ Icon, title, value, href }) => {
-            const ContactIcon = Icon as typeof MapPin;
-            const content = href ? (
-              <a
-                href={href}
-                target={href.startsWith("https://") ? "_blank" : undefined}
-                rel={href.startsWith("https://") ? "noreferrer" : undefined}
-                className="mt-2 block text-slate-600 transition hover:text-accent"
-              >
-                {value}
-              </a>
-            ) : (
-              <p className="mt-2 text-slate-600">{value}</p>
-            );
-
+          {contactCards.map(({ Icon, title, content }) => {
+            const ContactIcon = Icon;
             return (
               <div
-                key={`${title}-${value}`}
+                key={title}
                 className="rounded-2xl border border-green-100 p-7"
               >
                 <ContactIcon className="size-7 text-accent" />
