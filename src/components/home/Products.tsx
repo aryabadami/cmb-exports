@@ -20,13 +20,13 @@ export default function Products() {
           {products.map((product, index) => (
             <Reveal key={product.name} delay={index * 0.08} className="h-full">
               <div className="flex flex-col h-full bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative w-full h-80 flex-shrink-0 bg-[#f5f0e8]">
+                <div className="relative w-full h-80 flex-shrink-0 overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-contain object-center"
+                    className="object-cover object-center scale-110"
                   />
                 </div>
 
