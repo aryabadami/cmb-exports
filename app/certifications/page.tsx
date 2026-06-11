@@ -33,7 +33,7 @@ export default function CertificationsPage() {
                       <h2 className="font-heading text-2xl font-bold text-primary">
                         {name}
                       </h2>
-                      <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-extrabold text-green-800">
+                      <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-extrabold text-green-700">
                         {status}
                       </span>
                     </div>

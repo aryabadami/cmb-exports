@@ -20,9 +20,13 @@ export default function ContactPage() {
       Icon: Phone,
       title: "Phone",
       content: (
-        <div className="mt-2 space-y-1 text-slate-600">
-          <p>+91 78927 55421</p>
-          <p>+91 70220 65539</p>
+        <div className="flex flex-col gap-1">
+          <a href="tel:+917892755421" className="hover:text-green-700">
+            +91 78927 55421
+          </a>
+          <a href="tel:+917022065539" className="hover:text-green-700">
+            +91 70220 65539
+          </a>
         </div>
       ),
     },
@@ -42,20 +46,18 @@ export default function ContactPage() {
       Icon: MessageCircle,
       title: "WhatsApp",
       content: (
-        <div className="mt-2 space-y-1">
+        <div className="flex flex-col gap-1">
           <a
             href="https://wa.me/917892755421"
             target="_blank"
-            rel="noreferrer"
-            className="block text-slate-600 transition hover:text-accent"
+            className="hover:text-green-700"
           >
             +91 78927 55421
           </a>
           <a
             href="https://wa.me/917022065539"
             target="_blank"
-            rel="noreferrer"
-            className="block text-slate-600 transition hover:text-accent"
+            className="hover:text-green-700"
           >
             +91 70220 65539
           </a>

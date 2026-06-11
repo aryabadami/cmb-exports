@@ -23,7 +23,7 @@ export default function Certifications() {
                   <p className="mt-3 text-sm leading-6 text-slate-600">
                     {description}
                   </p>
-                  <span className="mt-4 inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-extrabold text-green-800">
+                  <span className="mt-4 inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-extrabold text-green-700">
                     ✓ {status}
                   </span>
                 </div>
